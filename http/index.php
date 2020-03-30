@@ -9,9 +9,9 @@
 </head>
 <body>
 <div id="status">
-    <canvas id="tempchart" width="500em" height="75em"></canvas>
-    <canvas id="humiditychart" width="500em" height="75em"></canvas>
-    <canvas id="heatindexchart" width="500em" height="75em"></canvas>
+    <canvas id="tempchart" width="500em" height="100em"></canvas>
+    <!-- <canvas id="humiditychart" width="500em" height="75em"></canvas>
+    <canvas id="heatindexchart" width="500em" height="75em"></canvas> -->
     <p>Time: <var id="time">nil</var></p>
     <p>Temp: <var id="temp">nil</var><i>°C</i></p>
     <p>Humidity: <var id="humidity">nil</var></p>

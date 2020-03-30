@@ -93,12 +93,23 @@ function updateCharts(client, animationOn){
                     label: 'Temperature in °C',
                     data: temps,
                     borderColor: 'rgba(255, 0, 0, 1)'
-                }]
+                },
+                {
+                    label: 'Heat Index',
+                    data: heat_index,
+                    borderColor: 'rgba(0, 255, 0, 1)'
+                },
+                {
+                    label: 'Humidity',
+                    data: humidity,
+                    borderColor: 'rgba(0, 0, 255, 1)'
+                }
+            ]
             },
             options: chartOption
         });
 
-        if(humiditychart != null) humiditychart.destroy();
+        /*if(humiditychart != null) humiditychart.destroy();
         var humidity_ctx = document.getElementById('humiditychart').getContext('2d');
         humiditychart = new Chart(humidity_ctx, {
             type: 'line',
@@ -111,9 +122,9 @@ function updateCharts(client, animationOn){
                 }]
             },
             options: chartOption
-        });
+        });*/
 
-        if(heatindexchart != null) heatindexchart.destroy();
+        /*if(heatindexchart != null) heatindexchart.destroy();
         var heatindex_ctx = document.getElementById('heatindexchart').getContext('2d');
         heatindexchart = new Chart(heatindex_ctx, {
             type: 'line',
@@ -126,6 +137,6 @@ function updateCharts(client, animationOn){
                 }]
             },
             options: chartOption
-        });
+        });*/
     });
 }
