@@ -11,6 +11,23 @@ var HttpClient = function() {
     }
 }
 
+const units = {
+	Celcius: "°C",
+	Fahrenheit: "°F"
+};
+
+const config = {
+	minTemp: -10,
+	maxTemp: 60,
+	unit: "Celcius"
+};
+
+function setTemperature(tempValue) {
+    const temperature = document.getElementById("temperature");
+	temperature.style.height = (tempValue - config.minTemp) / (config.maxTemp - config.minTemp) * 100 + "%";
+	temperature.dataset.value = tempValue + units[config.unit];
+}
+
 var client = new HttpClient();
 
 var tempchart = null;
@@ -35,6 +52,8 @@ function updateCharts(client, animationOn){
         document.getElementById("temp").innerHTML = jsonResponse[0].temperature;
         document.getElementById("humidity").innerHTML = jsonResponse[0].humidity;
         document.getElementById("heat_index").innerHTML = jsonResponse[0].heat_index;
+
+        setTemperature(jsonResponse[0].temperature);
 
         labels = [];
         temps = [];
